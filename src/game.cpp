@@ -34,8 +34,6 @@ void Game::displayEnd() {
         return;
     }
     cout << ANSI_YELLOW << "YELLOW WINS 🥳" << endl;
-
-    
 }
 
 // Returns boolean indicating if the game is complete.
