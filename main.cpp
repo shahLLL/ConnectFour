@@ -23,7 +23,7 @@ void displayIntro() {
 
 // Prints when player makes an invalid move.
 void printInvalidMove() {
-    cout << "INVALID MOVE! PLEASE ENTER A NUMBER CORRESPONDING TO AN EMPTY COLUMN" << endl << endl;
+    cout << "INVALID MOVE! PLEASE ENTER A NUMBER CORRESPONDING TO AN EMPTY COLUMN OR Q to QUIT" << endl << endl;
 }
 
 // This function executes the Main Game Loop
@@ -36,9 +36,12 @@ void executeGameLoop() {
         cout << "ENTER MOVE: ";
 
         if(!(cin >> col)) {
+            cin.clear();
+            char quitCheck;
+            if((cin >> quitCheck) && (quitCheck == 'Q'))
+                exit(0);
             printInvalidMove();
-            cin.clear(); // Reset cin error state
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear bad text
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             continue;
         }
         if(!g.makeMove(static_cast<uint8_t>(col)))
