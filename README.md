@@ -1,4 +1,4 @@
-# 🔴🟡 CPP-ConnectFour
+# 🔴🟡 ConnectFour
 This is a C++ Implementation of the game Connect 4.
 <div align="center">
   <img src="images/background.jpg" alt="Background" width="75%"/>
